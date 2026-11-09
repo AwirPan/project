@@ -1,5 +1,5 @@
 class Phone:
-    __current_voltage=0
+    __current_voltage=20
     def __keep_singal_core(self):
         print("让CPU以单核运行")
     def call_by_5G(self):
