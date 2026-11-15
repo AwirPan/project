@@ -1,15 +1,13 @@
-def account_create(initial_amount=0):
-    def atm(num,deposit=True):
-        nonlocal initial_amount
-        if deposit:
-            initial_amount += num
-            print(initial_amount)
-        else:
-            initial_amount -= num
-            print(initial_amount)
-    return atm
-atm=account_create()
-atm(100)
-atm(200)
-atm(300)
-atm(400,False)
+def outer(func):
+    def inner():
+        print("我睡觉了")
+        func()
+        print("我起床了")
+    return inner
+def sleep():
+    import random
+    import time
+    print("睡眠中")
+    time.sleep(random.randint(1,5))
+fn=outer(sleep)
+fn()
