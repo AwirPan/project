@@ -4,10 +4,10 @@ def outer(func):
         func()
         print("我起床了")
     return inner
+@outer
 def sleep():
     import random
     import time
     print("睡眠中")
     time.sleep(random.randint(1,5))
-fn=outer(sleep)
-fn()
+sleep()
