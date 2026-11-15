@@ -1,8 +1,10 @@
-def outer(logo):
-    def inner(msg):
-        print(f"{logo},{msg},{logo}")
+def outer(num1):
+    def inner(num2):
+        nonlocal num1
+        num1+=num2
+        print(num1)
     return inner
-fn1=outer("黑马程序员")
-fn1("大家好")
-fn2=outer("传智教育")
-fn2("大家好")
+fn=outer(10)
+fn(10)
+fn(10)
+fn(10)
